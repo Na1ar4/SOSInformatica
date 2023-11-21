@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/dd0643d8bb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Como atualizar drivers através do Windows Update</title>
+</head>
+<body>
+     <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <img src="img/SOSInfo.png" alt="Logo">
+            </div>
+            <!-- menu -->
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                    <li class="nav-item"><a href="Tutoriais1.html" class="nav-link">Tutoriais</a></li>
+                    <li class="nav-item"><a href="sobre.html" class="nav-link"> Sobre</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()"><img class="icon" src="img/menu_white_36dp.svg" alt=""></button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item"><a href="index.html" class="nav-link">Início</a></li>
+                <li class="nav-item"><a href="Tutoriais1.html" class="nav-link">Tutoriais</a></li>
+                <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+                </ul>
+                
+        </div>
+    
+         
+     </header><br><br>
+     <main>
+        
+        <div class="container">
+            <div class="content">
+                <h1>Como atualizar drivers através do Windows Update</h1><br>
+                <img src="img/drives 1.jpg" alt=""><br>
+                <br><p>O Windows 10 usa o Windows Update para manter o sistema operacional e componentes atualizados.</p><br>
+                <p>Para isso, acesse as “Configurações”, selecione “Atualização e segurança” e verifique se há novos updates. Se houver, instale e reinicie a máquina.</p><br>
+                <img src="img/drive 1.jpg" alt=""><br>
+                
+                <br><br><h1>Como atualizar drivers através do Gerenciador de Dispositivos</h1><br>
+                <p>Mesmo que o Windows Update mantenha o sistema atualizado, o usuário pode optar por atualizar, remover e instalar drivers se assim desejar fazê-lo.</p><br>
+                <img src="img/drives 2.jpg" alt=""><br>
+                <br><p>Veja como:</p><br>
+                <ul>
+                    <li>Na ferramenta de busca, digite Gerenciador de Dispositivos e abra-o;</li>
+                    <li>Expanda uma categoria de dispositivo que deseje atualizar. Por exemplo: os drivers da placa de vídeo ficam em Adaptadores de vídeo, os de unidades de disco, em Controladores de armazenamento, etc;</li>
+                    <li>Clique com o botão direito do mouse sobre o dispositivo desejado, e depois, em Atualizar driver;</li>
+                    <li>Selecione a opção Pesquisar automaticamente software de driver atualizado. Ao fazer isso, o Windows 10 vai buscar uma versão mais nova do driver no servidor oficial do fabricante do dispositivo, e caso encontre, irá instalá-lo.</li>
+                </ul><br>
+                
+                <p>Caso o Gerenciador de Dispositivos não encontre um driver novo, mas ele exista, é possível acessar o site do fabricante e baixar o arquivo manualmente. Neste caso, é preciso seguir as orientações da empresa responsável para instalá-lo.</p><br>
+               
+                <h3>Visite o Site do Fabricante:</h3><br>
+                <p>
+                    Vá para o site oficial do fabricante do dispositivo. Normalmente, eles têm uma seção de suporte ou download de drivers. Utilize motores de busca como o Google. Insira o nome do fabricante e o modelo do dispositivo, seguido de palavras-chave como "site oficial" ou "suporte". Isso geralmente levará você ao site correto.
+                </p><br>
+            
+                <h3>Encontre o Driver:</h3><br>
+                <p>
+                    Procure a seção de drivers e localize o driver correto para o seu sistema operacional e modelo de dispositivo.
+                </p><br>
+            
+                <h3>Baixe o Driver:</h3><br>
+                <p>
+                    Baixe o arquivo do driver correspondente ao seu sistema operacional. Geralmente, os drivers vêm em arquivos executáveis (EXE) ou arquivos ZIP.
+                </p><br>
+            
+                <h3>Instale o Driver:</h3><br>
+                <p>
+                    Se o arquivo for um executável (EXE), basta executá-lo e seguir as instruções na tela para instalar o driver. 
+                    Se o arquivo estiver compactado em um arquivo ZIP, extraia os arquivos para uma pasta e, em seguida, siga as instruções de instalação fornecidas pelo fabricante. 
+                    Isso pode envolver a execução de um programa de instalação ou a atualização do driver através do Gerenciador de Dispositivos.
+                </p><br>
+            
+                <h3>Reinicie o Computador:</h3><br>
+                <p>
+                    Após a instalação, é recomendável reiniciar o computador para garantir que as alterações entrem em vigor.
+                </p><br>
+            
+                <h3>Verifique a Instalação:</h3><br>
+                <p>
+                    Após reiniciar, volte ao Gerenciador de Dispositivos para garantir que o driver foi instalado corretamente e que não há mais problemas com o dispositivo.
+                </p><br>
+                
+                <br><h2>Como verificar as versões dos drivers pelo PowerShell</h2><br>
+                <p>Uma maneira rápida de conseguir uma lista completa, com todas as versões dos drivers instalados é usando o PowerShell, uma ferramenta para automação de scripts. No entanto, não é possível atualizar drivers através dele.</p><br>
+                <p>No campo de busca do Windows 10, digite PowerShell;</p><br>
+                <p>Clique com o botão direito do mouse sobre o resultado Windows PowerShell;</p><br>
+                <p>Selecione Executar como administrador;</p><br>
+                <p>O Windows vai perguntar se deseja fazer alterações, clique em Sim;</p><br>
+                <p>No PowerShell, digite "Get-WmiObject Win32_PnPSignedDriver| select DeviceName, Manufacturer, DriverVersion" (sem as aspas) e tecle Enter;</p><br>
+                <p>O PowerShell vai listar todos os drivers instalados. A versão de cada um deles se encontra na coluna DriverVersion.</p><br>
+                <img src="img/drives 3.jpg" alt=""><br>
+                
+                <br><br><h2>Como desinstalar e reinstalar um driver no Windows 10</h2><br>
+                <p>Caso um driver esteja causando problemas, é possível removê-lo e desinstalá-lo:</p><br>
+                <ul>
+                    <li>Abra o Gerenciador de Dispositivos, e expanda a categoria do dispositivo que deseja modificar;</li>
+                    <li>Clique com o botão direito do mouse sobre o dispositivo desejado, e depois, em Desinstalar dispositivo;</li>
+                    <li>Confirme as informações, e reinicie o computador. Ao reiniciar, o Windows 10 tentará reinstalar o driver;</li>
+                    <li>Caso ele não consiga, abra novamente o Gerenciador de Dispositivos;</li>
+                    <li>Clique com o botão direito do mouse sobre o dispositivo desejado, e depois, em Atualizar driver;</li>
+                    <li>Selecione a opção Pesquisar automaticamente software de driver atualizado.</li>
+                </ul><br>
+
+        </main>
+        <footer>
+            <div class="container-footer">
+                <div class="row-footer">
+                    <div class="footer-col">
+                        <img src="img/SOSInfo.png">
+                    </div>
+                          <!-- footer col-->
+                          <div class="footer-col">
+                            <h4>Menu</h4>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="Tutoriais1.html">Tutoriais</a></li>
+                                <li><a href="sobre.html">Sobre</a></li>
+                                
+                            </ul>
+                        </div>
+                        <!--end footer col-->
+                    <!-- footer col-->
+                    <div class="footer-col">
+                        <h4>Contato</h4>
+                        <ul>
+                            <li><a href="#"> Email: SosInformatica@gmail.com </a></li>
+                            <li><a href="#"> Whatsapp: (19)97821-5680</a></li>
+                        </ul>
+                    </div>
+                    <!--end footer col-->
+                    <!-- footer col-->
+                    <div class="footer-col">
+                        <h4>REDES SOCIAIS</h4>
+    
+                        <div class="medias-socias">
+                             <a href="https://w.app/SOSInformtica"> <i class="fa fa-whatsapp"></i> </a>
+                            <a href="https://web.telegram.org/k/#@InfoSOSTechBot"> <i class="fa fa-telegram"></i> </a>
+                        
+                        </div>
+    
+                    </div>
+                
+                    <div id="footer_copyright">
+                        <br><br><center>
+                            <p>Criado por</p>
+                            <p> Gianluca F. de Oliveira e Naiara B. de Oliveira</p>
+                        </center>
+                       </div>
+                    <!--end footer col-->
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript">
+            (function(d, m){
+                var kommunicateSettings = 
+                    {"appId":"1029b68b877e4f3929b5d89e5da1a1969","popupWidget":true,"automaticChatOpenOnNavigation":true};
+                var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+                s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+                var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+                window.kommunicate = m; m._globals = kommunicateSettings;
+            })(document, window.kommunicate || {});
+        /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+        </script>
+            
+            </body>
+            
+</html>
